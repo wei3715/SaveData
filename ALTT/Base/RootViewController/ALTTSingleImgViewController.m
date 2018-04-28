@@ -31,6 +31,10 @@
     }];
     self.contentSV.contentSize = CGSizeMake(0, [self.paramDic[@"contentSizeH"]floatValue]);
     
+//    if (![self.paramDic[@"contentSizeH"]floatValue]) {
+//        self.contentSV.scrollEnabled = NO;
+//    }
+    
     [self.contentSV addSubview:self.contentIV];
     [self.contentIV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.contentSV);

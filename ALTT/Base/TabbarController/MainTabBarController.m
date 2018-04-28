@@ -75,7 +75,7 @@
     [self setupChildViewController:clubVC title:@"Club" imageName:@"tab_club_nor" seleceImageName:@"tab_club_pre"];
     
     ALTTMineViewController *mineVC = [[ALTTMineViewController alloc]init];
-    [self setupChildViewController:mineVC title:@"Me" imageName:@"tab_me_nor" seleceImageName:@"tab_me_pre"];
+    [self setupChildViewController:mineVC title:@"我的" imageName:@"tab_me_nor" seleceImageName:@"tab_me_pre"];
     
     self.viewControllers = _VCS;
 }

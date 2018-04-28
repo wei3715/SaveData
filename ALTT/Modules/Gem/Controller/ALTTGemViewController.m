@@ -50,7 +50,8 @@
     
     
     NSDictionary *topBtnDic = @{@"normalImage":@"yellow"};
-    _gemBtn = [ZSHBaseUIControl  createBtnWithParamDic:topBtnDic target:self action:nil];
+    _gemBtn = [ZSHBaseUIControl  createBtnWithParamDic:topBtnDic target:self action:@selector(topTwoBtnAction:)];
+    _gemBtn.tag = 8;
     [self.contentIV addSubview:_gemBtn];
     [_gemBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.contentIV).offset(kRealValue(60));
@@ -59,7 +60,8 @@
     }];
     
     NSDictionary *sbottomBtnDic = @{@"normalImage":@"green"};
-    _energyBtn = [ZSHBaseUIControl  createBtnWithParamDic:sbottomBtnDic target:self action:nil];
+   _energyBtn = [ZSHBaseUIControl  createBtnWithParamDic:sbottomBtnDic target:self action:@selector(topTwoBtnAction:)];
+    _energyBtn.tag = 9;
     [self.contentIV addSubview:_energyBtn];
     [_energyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.gemBtn.mas_bottom);
@@ -100,7 +102,26 @@
 }
 
 #pragma action
+- (void)topTwoBtnAction:(UIButton *)btn{
+    
+    NSInteger tag = btn.tag - 8;
+    NSArray *contentTitleArr = @[@"宝石链",@"能量值"];
+    NSArray *contentSizeH = @[@(0),@(0)];
+    NSArray *imageArr = @[@"star_bj_5",@"star_bj_4"];
+    NSDictionary *nextParamDic = @{@"bgImg":imageArr[tag],@"contentSizeH":contentSizeH[tag],@"title":contentTitleArr[tag]};
+    ALTTSingleImgViewController  *singleImgVC = [[ALTTSingleImgViewController alloc]initWithParamDic:nextParamDic];
+    [self.navigationController pushViewController:singleImgVC animated:YES];
+}
+
 - (void)topThreeBtnAction:(UIButton *)btn{
+    NSInteger tag = btn.tag - 10;
+    NSArray *contentTitleArr = @[@"猜猜",@"游戏",@"CLUB"];
+    NSArray *contentSizeH = @[@(kRealValue(1540)/2),@(0),@(0)];
+    NSArray *imageArr = @[@"猜猜",@"游戏",@"friend_bg_1"];
+    NSDictionary *nextParamDic = @{@"bgImg":imageArr[tag],@"contentSizeH":contentSizeH[tag],@"title":contentTitleArr[tag]};
+    ALTTSingleImgViewController  *singleImgVC = [[ALTTSingleImgViewController alloc]initWithParamDic:nextParamDic];
+    singleImgVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:singleImgVC animated:YES];
     
 }
 

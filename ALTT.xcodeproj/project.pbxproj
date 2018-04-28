@@ -76,6 +76,8 @@
 		042F37AB209066FD00A8DD79 /* ZSHGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 042F37AA209066FD00A8DD79 /* ZSHGuideView.m */; };
 		042F37AE20906A9000A8DD79 /* ALTTO2OBottomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042F37AD20906A9000A8DD79 /* ALTTO2OBottomViewController.m */; };
 		04BBDD1720932CA6004E7DCE /* ALTTSingleImgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BBDD1620932CA6004E7DCE /* ALTTSingleImgViewController.m */; };
+		04BBDD23209469D7004E7DCE /* ZSHGoodMineReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BBDD1F209469D6004E7DCE /* ZSHGoodMineReusableView.m */; };
+		04BBDD24209469D7004E7DCE /* ZSHGoodsMineGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BBDD22209469D7004E7DCE /* ZSHGoodsMineGridCell.m */; };
 		04ECCBA3208DBC7A0017E76F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ECCBA2208DBC7A0017E76F /* AppDelegate.m */; };
 		04ECCBA9208DBC7A0017E76F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ECCBA7208DBC7A0017E76F /* Main.storyboard */; };
 		04ECCBAB208DBC800017E76F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04ECCBAA208DBC800017E76F /* Assets.xcassets */; };
@@ -256,6 +258,10 @@
 		042F37AD20906A9000A8DD79 /* ALTTO2OBottomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTTO2OBottomViewController.m; sourceTree = "<group>"; };
 		04BBDD1520932CA6004E7DCE /* ALTTSingleImgViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALTTSingleImgViewController.h; sourceTree = "<group>"; };
 		04BBDD1620932CA6004E7DCE /* ALTTSingleImgViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTTSingleImgViewController.m; sourceTree = "<group>"; };
+		04BBDD1F209469D6004E7DCE /* ZSHGoodMineReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSHGoodMineReusableView.m; sourceTree = "<group>"; };
+		04BBDD20209469D6004E7DCE /* ZSHGoodsMineGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSHGoodsMineGridCell.h; sourceTree = "<group>"; };
+		04BBDD21209469D7004E7DCE /* ZSHGoodMineReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSHGoodMineReusableView.h; sourceTree = "<group>"; };
+		04BBDD22209469D7004E7DCE /* ZSHGoodsMineGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSHGoodsMineGridCell.m; sourceTree = "<group>"; };
 		04ECCB9E208DBC7A0017E76F /* ALTT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALTT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04ECCBA1208DBC7A0017E76F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04ECCBA2208DBC7A0017E76F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -804,6 +810,10 @@
 		042F3778208F117D00A8DD79 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04BBDD21209469D7004E7DCE /* ZSHGoodMineReusableView.h */,
+				04BBDD1F209469D6004E7DCE /* ZSHGoodMineReusableView.m */,
+				04BBDD20209469D6004E7DCE /* ZSHGoodsMineGridCell.h */,
+				04BBDD22209469D7004E7DCE /* ZSHGoodsMineGridCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1173,6 +1183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				042F370D208EC94100A8DD79 /* NJKWebViewProgress.m in Sources */,
+				04BBDD23209469D7004E7DCE /* ZSHGoodMineReusableView.m in Sources */,
 				042F3748208ECBD000A8DD79 /* NSDictionary+Log.m in Sources */,
 				042F3709208EC94100A8DD79 /* MainTabBarController.m in Sources */,
 				04BBDD1720932CA6004E7DCE /* ALTTSingleImgViewController.m in Sources */,
@@ -1224,6 +1235,7 @@
 				042F36FC208EC94100A8DD79 /* XXTextView.m in Sources */,
 				042F36F6208EC94100A8DD79 /* ZSHBaseUIControl.m in Sources */,
 				042F377F208F117D00A8DD79 /* ALTTGemViewController.m in Sources */,
+				04BBDD24209469D7004E7DCE /* ZSHGoodsMineGridCell.m in Sources */,
 				042F36F4208EC94100A8DD79 /* ZSHCustomSlider.m in Sources */,
 				042F36F9208EC94100A8DD79 /* TYCyclePagerView.m in Sources */,
 				04F59EBE209089BD004346D4 /* ALTTShopCartViewController.m in Sources */,
@@ -1298,6 +1310,116 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		04BBDD1B20945E79004E7DCE /* Ad_hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Ad_hoc;
+		};
+		04BBDD1C20945E79004E7DCE /* Ad_hoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE68564699681E2B5DFBAB09 /* Pods-ALTT.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 84479DR68T;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = /Users/mac/Desktop/ALTT/ALTT/Define/PrefixHeader.pch;
+				INFOPLIST_FILE = ALTT/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rljk.ALTT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "09d1e09d-9859-43af-92f6-41ea36859e23";
+				PROVISIONING_PROFILE_SPECIFIER = "Ad_hoc_profile(0428)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Ad_hoc;
+		};
+		04BBDD1D20945E79004E7DCE /* Ad_hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ALTTTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = zoe.ALTTTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ALTT.app/ALTT";
+			};
+			name = Ad_hoc;
+		};
+		04BBDD1E20945E79004E7DCE /* Ad_hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ALTTUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = zoe.ALTTUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ALTT;
+			};
+			name = Ad_hoc;
+		};
 		04ECCBC8208DBC800017E76F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1413,7 +1535,8 @@
 			baseConfigurationReference = C3A17D3DD18A6C2F7926D9E5 /* Pods-ALTT.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 84479DR68T;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = /Users/mac/Desktop/ALTT/ALTT/Define/PrefixHeader.pch;
 				INFOPLIST_FILE = ALTT/Info.plist;
@@ -1421,8 +1544,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = zoe.ALTT;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rljk.ALTT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1e8309c8-3023-48ca-9489-856c1a579170";
+				PROVISIONING_PROFILE_SPECIFIER = "dev_profile(0428)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1432,7 +1557,9 @@
 			baseConfigurationReference = FE68564699681E2B5DFBAB09 /* Pods-ALTT.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 84479DR68T;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = /Users/mac/Desktop/ALTT/ALTT/Define/PrefixHeader.pch;
 				INFOPLIST_FILE = ALTT/Info.plist;
@@ -1440,8 +1567,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = zoe.ALTT;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rljk.ALTT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d6840b72-1da6-4f81-9566-9fc37d815e93";
+				PROVISIONING_PROFILE_SPECIFIER = "dis_profile(0428)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1524,6 +1653,7 @@
 			buildConfigurations = (
 				04ECCBC8208DBC800017E76F /* Debug */,
 				04ECCBC9208DBC800017E76F /* Release */,
+				04BBDD1B20945E79004E7DCE /* Ad_hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1533,6 +1663,7 @@
 			buildConfigurations = (
 				04ECCBCB208DBC800017E76F /* Debug */,
 				04ECCBCC208DBC800017E76F /* Release */,
+				04BBDD1C20945E79004E7DCE /* Ad_hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1542,6 +1673,7 @@
 			buildConfigurations = (
 				04ECCBCE208DBC800017E76F /* Debug */,
 				04ECCBCF208DBC800017E76F /* Release */,
+				04BBDD1D20945E79004E7DCE /* Ad_hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1551,6 +1683,7 @@
 			buildConfigurations = (
 				04ECCBD1208DBC800017E76F /* Debug */,
 				04ECCBD2208DBC800017E76F /* Release */,
+				04BBDD1E20945E79004E7DCE /* Ad_hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
