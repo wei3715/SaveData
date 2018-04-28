@@ -202,6 +202,25 @@
     return _bottomBtn;
 }
 
+- (UIScrollView *)contentSV{
+    if (!_contentSV) {
+        _contentSV = [[UIScrollView alloc]init];
+        _contentSV.showsVerticalScrollIndicator = NO;
+        _contentSV.showsHorizontalScrollIndicator = NO;
+        _contentSV.scrollsToTop = NO;
+//        _contentSV.delaysContentTouches = NO;
+//        _contentSV.canCancelContentTouches = YES;
+    }
+    return _contentSV;
+}
+
+- (UIImageView *)contentIV{
+    if (!_contentIV) {
+        _contentIV = [[UIImageView alloc]init];
+    }
+    return _contentIV;
+}
+
 - (void)headerRereshing{
     [self.tableView.mj_header endRefreshing];
 }

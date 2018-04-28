@@ -46,7 +46,6 @@
     kWeakSelf(self);
     if(kFromClassTypeValue == FromO2ORecommendToTitleContentVC ){
         self.titleView.frame = CGRectMake(0, 0, KScreenWidth, kRealValue(35));
-//        self.contentView.frame = CGRectMake(0, kRealValue(35), KScreenWidth, kRealValue(1320)/2);
         [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(weakself.titleView.mas_bottom);
             make.bottom.mas_equalTo(weakself.view).offset(-KBottomTabH);

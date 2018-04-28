@@ -32,6 +32,10 @@ typedef void(^ZSHBottomBtnViewBtnBlock)(NSInteger);
 @property (nonatomic, strong) NSDictionary              *paramDic;
 @property (nonatomic, strong) UIButton                  *leftBtn;
 
+@property (nonatomic, strong) UIScrollView                      *contentSV;
+@property (nonatomic, strong) UIImageView                       *contentIV;
+@property (nonatomic, strong) NSArray                           *contentSizeArr;
+
 /**
  跳转登录
  */

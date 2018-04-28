@@ -75,6 +75,7 @@
 		042F37A7208F24E500A8DD79 /* ALTTTitleContentViewController+Method.m in Sources */ = {isa = PBXBuildFile; fileRef = 042F37A6208F24E500A8DD79 /* ALTTTitleContentViewController+Method.m */; };
 		042F37AB209066FD00A8DD79 /* ZSHGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 042F37AA209066FD00A8DD79 /* ZSHGuideView.m */; };
 		042F37AE20906A9000A8DD79 /* ALTTO2OBottomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042F37AD20906A9000A8DD79 /* ALTTO2OBottomViewController.m */; };
+		04BBDD1720932CA6004E7DCE /* ALTTSingleImgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BBDD1620932CA6004E7DCE /* ALTTSingleImgViewController.m */; };
 		04ECCBA3208DBC7A0017E76F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ECCBA2208DBC7A0017E76F /* AppDelegate.m */; };
 		04ECCBA9208DBC7A0017E76F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ECCBA7208DBC7A0017E76F /* Main.storyboard */; };
 		04ECCBAB208DBC800017E76F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04ECCBAA208DBC800017E76F /* Assets.xcassets */; };
@@ -253,6 +254,8 @@
 		042F37AA209066FD00A8DD79 /* ZSHGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSHGuideView.m; sourceTree = "<group>"; };
 		042F37AC20906A9000A8DD79 /* ALTTO2OBottomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALTTO2OBottomViewController.h; sourceTree = "<group>"; };
 		042F37AD20906A9000A8DD79 /* ALTTO2OBottomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTTO2OBottomViewController.m; sourceTree = "<group>"; };
+		04BBDD1520932CA6004E7DCE /* ALTTSingleImgViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALTTSingleImgViewController.h; sourceTree = "<group>"; };
+		04BBDD1620932CA6004E7DCE /* ALTTSingleImgViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTTSingleImgViewController.m; sourceTree = "<group>"; };
 		04ECCB9E208DBC7A0017E76F /* ALTT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALTT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04ECCBA1208DBC7A0017E76F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04ECCBA2208DBC7A0017E76F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -502,6 +505,8 @@
 				042F37A3208F247500A8DD79 /* ALTTTitleContentViewController.m */,
 				042F37A5208F24E500A8DD79 /* ALTTTitleContentViewController+Method.h */,
 				042F37A6208F24E500A8DD79 /* ALTTTitleContentViewController+Method.m */,
+				04BBDD1520932CA6004E7DCE /* ALTTSingleImgViewController.h */,
+				04BBDD1620932CA6004E7DCE /* ALTTSingleImgViewController.m */,
 			);
 			path = RootViewController;
 			sourceTree = "<group>";
@@ -1170,6 +1175,7 @@
 				042F370D208EC94100A8DD79 /* NJKWebViewProgress.m in Sources */,
 				042F3748208ECBD000A8DD79 /* NSDictionary+Log.m in Sources */,
 				042F3709208EC94100A8DD79 /* MainTabBarController.m in Sources */,
+				04BBDD1720932CA6004E7DCE /* ALTTSingleImgViewController.m in Sources */,
 				042F378A208F178C00A8DD79 /* XYTransition.m in Sources */,
 				042F3747208ECBD000A8DD79 /* NSArray+Log.m in Sources */,
 				042F36F5208EC94100A8DD79 /* ZSHBaseFunction.m in Sources */,

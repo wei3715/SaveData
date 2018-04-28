@@ -26,12 +26,12 @@
 {
     //设置导航栏背景色
     UINavigationBar *navBar = [UINavigationBar appearance];
-//    [navBar setBarTintColor:KZSHColor111F27];
-    [navBar setBarTintColor:[UIColor redColor]];
+    [navBar setBarTintColor:KZSHColor111F27];
+    
     
     //设置导航栏字体颜色
     NSMutableDictionary *attr = [NSMutableDictionary dictionary];
-    attr[NSForegroundColorAttributeName] = KZSHColor111F27;
+    attr[NSForegroundColorAttributeName] = KWhiteColor;
     attr[NSFontAttributeName] = kPingFangMedium(17);
     [navBar setTitleTextAttributes:attr];
 }
