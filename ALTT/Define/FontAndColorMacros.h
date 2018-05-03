@@ -48,9 +48,9 @@
 #define KZSHColor1A1A1A               [UIColor colorWithHexString:@"1A1A1A"]
 #define KZSHColor2A2A2A               [UIColor colorWithHexString:@"2A2A2A"]
 #define KZSHColor3D3D3D               [UIColor colorWithHexString:@"3D3D3D"]
-#define KZSHColor58AABE               [UIColor colorWithHexString:@"58AABE"]
-#define KZSHColor3E3E3E               [UIColor colorWithHexString:@"3E3E3E"]
-#define KZSHColorA61CE7               [UIColor colorWithHexString:@"A61CE7"]
+#define KZSHColorC6F500               [UIColor colorWithHexString:@"C6F500"]
+#define KZSHColor3F3F3F               [UIColor colorWithHexString:@"3F3F3F"]
+#define KZSHColorCCCCCC               [UIColor colorWithHexString:@"CCCCCC"]
 
 #define KZSHColorRGB(R,G,B)            [UIColor colorWithRed:(R * 1.0) / 255.0 green:(G * 1.0) / 255.0 blue:(B * 1.0) / 255.0 alpha:1.0]
 #define KZSHColorRGBA(R,G,B,A)         [UIColor colorWithRed:(R * 1.0) / 255.0 green:(G * 1.0) / 255.0 blue:(B * 1.0) / 255.0 alpha:A]

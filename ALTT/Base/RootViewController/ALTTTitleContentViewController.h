@@ -8,10 +8,13 @@
 
 #import "RootViewController.h"
 
+typedef void(^ChangeIndex)(NSInteger index);
 
 @interface ALTTTitleContentViewController : RootViewController
 
+
 @property (nonatomic, strong) NSMutableArray      *vcs;
 @property (nonatomic, assign) NSInteger           vcIndex;
+@property (nonatomic, copy)   ChangeIndex         changeIndexBlock;
 
 @end

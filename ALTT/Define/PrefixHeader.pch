@@ -27,8 +27,9 @@
 #import "ZSHBaseFunction.h"
 #import "UIView+ZSHExtension.h"
 #import "HCLocationManager.h"
-#import "LXScollTitleView.h"
+#import "LXSegmentTitleView.h"
 #import "ZSHGuideView.h"
+#import "ALTTSingleImgViewController.h"
 //第三方
 #import <YYKit.h>
 #import <Masonry.h>

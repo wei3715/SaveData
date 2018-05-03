@@ -22,21 +22,24 @@
 }
 
 - (void)createUI{
-    kWeakSelf(self);
-    self.contentSizeArr = @[@(kRealValue(1400)/2.0),@(kRealValue(1834)/2.0),@(1742),@(kRealValue(1494)/2.0),@(kRealValue(1494)/2.0)];
+
     [self.view addSubview:self.contentSV];
-    [self.contentSV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(weakself.view).insets(UIEdgeInsetsMake(0, 0, KBottomTabH, 0));
+    self.contentSV.scrollEnabled = NO;
+    NSInteger index = [self.paramDic[@"index"]integerValue];
+    UIImage *contentImage = [UIImage imageNamed:[NSString stringWithFormat:@"o2o_bg_bottom_%ld",index]];
+    [self.contentSV addSubview:self.contentIV];
+    self.contentIV.image = contentImage;
+    [self.contentIV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.contentSV);
+        make.left.right.mas_equalTo(self.view);
+        make.height.mas_equalTo(contentImage.size.height);
     }];
     
-    [self.contentSV addSubview:self.contentIV];
-    [self.contentIV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(weakself.contentSV);
+    [self.contentSV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.contentIV).offset(KBottomTabH);
     }];
-
-    NSInteger index = [self.paramDic[@"index"]integerValue];
-    self.contentSV.contentSize = CGSizeMake(0, [self.contentSizeArr[index]floatValue]);
-    self.contentIV.image = [UIImage imageNamed:[NSString stringWithFormat:@"o2o_bg_bottom_%ld",index]];
+    
     
 }
 

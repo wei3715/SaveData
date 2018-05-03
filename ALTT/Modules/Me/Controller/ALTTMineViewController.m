@@ -9,7 +9,7 @@
 #import "ALTTMineViewController.h"
 #import "ZSHGoodsMineGridCell.h"
 #import "ZSHGoodMineReusableView.h"
-static NSString * cellIdentifier = @"cellId";
+static NSString *cellIdentifier = @"cellId";
 static NSString *headerViewIdentifier = @"hederview";
 
 @interface ALTTMineViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
@@ -29,7 +29,7 @@ static NSString *headerViewIdentifier = @"hederview";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    
     [self loadData];
     [self createUI];
 }
@@ -57,7 +57,6 @@ static NSString *headerViewIdentifier = @"hederview";
         make.bottom.mas_equalTo(self.view);
         make.left.right.mas_equalTo(self.view);
     }];
-    self.collectionView.backgroundColor = KClearColor;
     self.collectionView.scrollEnabled = NO;
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
@@ -65,13 +64,13 @@ static NSString *headerViewIdentifier = @"hederview";
     [self.collectionView registerClass:[ZSHGoodsMineGridCell class] forCellWithReuseIdentifier:cellIdentifier];
     [self.collectionView registerClass:[ZSHGoodMineReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerViewIdentifier];
     
-    CGFloat top =  layout.headerReferenceSize.height + layout.itemSize.height;
-    CGFloat sectionHeight = layout.headerReferenceSize.height + layout.itemSize.height;
-    for (int i = 0; i<self.sectionTitleArr.count; i++) {
-        UIView *horizontalLine = [[UIView alloc]initWithFrame:CGRectMake(0,top + i*sectionHeight,KScreenWidth,0.5)];
-        horizontalLine.backgroundColor = [UIColor colorWithHexString:@"1D1D1D"];
-        [self.collectionView addSubview:horizontalLine];
-    }
+//    CGFloat top =  layout.headerReferenceSize.height + layout.itemSize.height;
+//    CGFloat sectionHeight = layout.headerReferenceSize.height + layout.itemSize.height;
+//    for (int i = 0; i<self.sectionTitleArr.count; i++) {
+//        UIView *horizontalLine = [[UIView alloc]initWithFrame:CGRectMake(0,top + i*sectionHeight,KScreenWidth,0.5)];
+//        horizontalLine.backgroundColor = [UIColor colorWithHexString:@"1D1D1D"];
+//        [self.collectionView addSubview:horizontalLine];
+//    }
 }
 
 #pragma collectionView delegate
@@ -103,6 +102,12 @@ static NSString *headerViewIdentifier = @"hederview";
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         ZSHGoodMineReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headerViewIdentifier forIndexPath:indexPath];
         [header updateWithTitle:self.sectionTitleArr[indexPath.section]];
+        if (indexPath.section == 0) {
+            header.rightBtn.hidden = NO;
+            header.rightBtnBlock = ^(NSInteger tag) {
+                RLog(@"点击全部订单");
+            };
+        }
         header.userInteractionEnabled = YES;
         header.tag = indexPath.section + 1;
         [header addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headViewAction:)]];
@@ -120,7 +125,7 @@ static NSString *headerViewIdentifier = @"hederview";
 
 - (void)headViewAction:(UITapGestureRecognizer *)gesture{
     if (gesture.view.tag == 1) {//我的订单
-        [self changeDataSource:0];
+//        [self changeDataSource:0];
     }
 }
 
@@ -139,8 +144,8 @@ static NSString *headerViewIdentifier = @"hederview";
                            @{@"image":@"my_icon_8",@"desc":@"我的活动",@"tag":@(3)},
                            @{@"image":@"my_icon_9",@"desc":@"创客中心",@"tag":@(4)},
                            @{@"image":@"my_icon_10",@"desc":@"宝石排行",@"tag":@(5)},
-                           @{@"image":@"my_icon_11",@"desc":@"获取能量",@"tag":@(7)},
-                           @{@"image":@"my_icon_8",@"desc":@"设置",@"tag":@(7)}]
+                           @{@"image":@"my_icon_11",@"desc":@"获取能量",@"tag":@(6)},
+                           @{@"image":@"my_icon_12",@"desc":@"设置",@"tag":@(7)}]
                          ];
         
         
@@ -160,21 +165,21 @@ static NSString *headerViewIdentifier = @"hederview";
                               @"ALTTSingleImgViewController",
                               @"ALTTSingleImgViewController"]
                             ];
-        self.paramArr = @[@[@{@"bgImg":@"star_bj_1",@"contentSizeH":@(0),@"title":@"订单"},
-                            @{@"bgImg":@"star_bj_1",@"contentSizeH":@(0),@"title":@"订单"},
-                            @{@"bgImg":@"star_bj_1",@"contentSizeH":@(0),@"title":@"订单"},
-                            @{@"bgImg":@"star_bj_1",@"contentSizeH":@(0),@"title":@"订单"},
-                            @{@"bgImg":@"star_bj_1",@"contentSizeH":@(0),@"title":@"订单"}],
-                          @[@{@"bgImg":@"star_bj_1",@"contentSizeH":@(0),@"title":@"订单"},
-                            @{@"bgImg":@"star_bj_1",@"contentSizeH":@(0),@"title":@"订单"},
-                            @{@"bgImg":@"star_bj_1",@"contentSizeH":@(0),@"title":@"订单"},
-                            @{@"bgImg":@"star_bj_1",@"contentSizeH":@(0),@"title":@"订单"},
-                            @{@"bgImg":@"star_bj_1",@"contentSizeH":@(0),@"title":@"订单"},
-                            @{@"bgImg":@"star_bj_1",@"contentSizeH":@(0),@"title":@"订单"},
-                            @{@"bgImg":@"star_bj_1",@"contentSizeH":@(0),@"title":@"订单"},
-                           ]
+        self.paramArr = @[@[@{@"bgImg":@"star_bj_1",@"title":@"订单"},
+                            @{@"bgImg":@"star_bj_1",@"title":@"订单"},
+                            @{@"bgImg":@"star_bj_1",@"title":@"订单"},
+                            @{@"bgImg":@"star_bj_1",@"title":@"订单"},
+                            @{@"bgImg":@"star_bj_1",@"title":@"订单"}],
+                          @[@{@"bgImg":@"star_bj_1",@"title":@"订单"},
+                            @{@"bgImg":@"star_bj_1",@"title":@"订单"},
+                            @{@"bgImg":@"star_bj_1",@"title":@"订单"},
+                            @{@"bgImg":@"star_bj_1",@"title":@"订单"},
+                            @{@"bgImg":@"star_bj_1",@"title":@"订单"},
+                            @{@"bgImg":@"star_bj_1",@"title":@"订单"},
+                            @{@"bgImg":@"star_bj_1",@"title":@"订单"},
+                            ]
                           ];
-       
+        
     }
 }
 

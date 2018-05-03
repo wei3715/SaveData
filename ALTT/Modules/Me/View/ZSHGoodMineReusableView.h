@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^RightBtnBlock)(NSInteger tag);
 @interface ZSHGoodMineReusableView : UICollectionReusableView
 
-@property (nonatomic, strong) UILabel *headLabel;
+@property (nonatomic, strong) UILabel       *headLabel;
+@property (nonatomic, strong) UIButton      *rightBtn;
+@property (nonatomic, copy)   RightBtnBlock rightBtnBlock;
 
 - (void)updateWithTitle:(NSString *)title;
 

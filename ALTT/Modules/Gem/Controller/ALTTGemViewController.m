@@ -7,7 +7,7 @@
 //
 
 #import "ALTTGemViewController.h"
-#import "ALTTSingleImgViewController.h"
+#import "ALTTNoticeViewController.h"
 @interface ALTTGemViewController ()
 
 @property (strong, nonatomic) UIButton *gemBtn;
@@ -26,28 +26,29 @@
 }
 
 - (void)createUI{
-    kWeakSelf(self);
-//    self.title = @"";
-//    NSDictionary *navBtnDic = @{@"normalImage":@"notice",@"title":@"公告：ALiTaiTai 珠宝星球区块链场景上线啦",@"titleColor":KWhiteColor};
-//    UIButton *navBtn = [ZSHBaseUIControl  createBtnWithParamDic:navBtnDic target:self action:nil];
-//    navBtn.frame = CGRectMake(0, 0, KScreenWidth, KNavigationBarHeight);
-//    [self.navigationController.navigationBar addSubview:navBtn];
-    
+
+    NSDictionary *navBtnDic = @{@"normalImage":@"notice",@"title":@"公告：ALiTaiTai 珠宝星球区块链场景上线啦",@"titleColor":KWhiteColor};
+    UIButton *navBtn = [ZSHBaseUIControl  createBtnWithParamDic:navBtnDic target:self action:@selector(noticeAction)];
+    navBtn.frame = CGRectMake(0, 0, kScreenWidth, kRealValue(44));
+    [self.navigationItem setTitleView:navBtn];
+   
 
     [self.view addSubview:self.contentSV];
-    [self.contentSV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(weakself.view).insets(UIEdgeInsetsMake(KNavigationBarHeight, 0, KBottomTabH, 0));
-    }];
-    self.contentSV.contentSize = CGSizeMake(0, kRealValue(2080)/2);
-    
     
     [self.contentSV addSubview:self.contentIV];
+    self.contentIV.image = [UIImage imageNamed:@"star_bj"];
     self.contentIV.userInteractionEnabled = YES;
     [self.contentIV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(weakself.contentSV);
+        make.top.mas_equalTo(self.contentSV);
+        make.left.right.mas_equalTo(self.view);
+        make.height.mas_equalTo(self.contentIV.image.size.height);
     }];
-    self.contentIV.image = [UIImage imageNamed:@"star_bj"];
     
+    
+    [self.contentSV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.view).insets(UIEdgeInsetsMake(KNavigationBarHeight, 0, 0, 0));
+        make.bottom.mas_equalTo(self.contentIV).offset(KBottomTabH);
+    }];
     
     NSDictionary *topBtnDic = @{@"normalImage":@"yellow"};
     _gemBtn = [ZSHBaseUIControl  createBtnWithParamDic:topBtnDic target:self action:@selector(topTwoBtnAction:)];
@@ -106,9 +107,8 @@
     
     NSInteger tag = btn.tag - 8;
     NSArray *contentTitleArr = @[@"宝石链",@"能量值"];
-    NSArray *contentSizeH = @[@(0),@(0)];
     NSArray *imageArr = @[@"star_bj_5",@"star_bj_4"];
-    NSDictionary *nextParamDic = @{@"bgImg":imageArr[tag],@"contentSizeH":contentSizeH[tag],@"title":contentTitleArr[tag]};
+    NSDictionary *nextParamDic = @{@"bgImg":imageArr[tag],@"title":contentTitleArr[tag],@"rightTitle":@"兑换"};
     ALTTSingleImgViewController  *singleImgVC = [[ALTTSingleImgViewController alloc]initWithParamDic:nextParamDic];
     [self.navigationController pushViewController:singleImgVC animated:YES];
 }
@@ -116,11 +116,9 @@
 - (void)topThreeBtnAction:(UIButton *)btn{
     NSInteger tag = btn.tag - 10;
     NSArray *contentTitleArr = @[@"猜猜",@"游戏",@"CLUB"];
-    NSArray *contentSizeH = @[@(kRealValue(1540)/2),@(0),@(0)];
     NSArray *imageArr = @[@"猜猜",@"游戏",@"friend_bg_1"];
-    NSDictionary *nextParamDic = @{@"bgImg":imageArr[tag],@"contentSizeH":contentSizeH[tag],@"title":contentTitleArr[tag]};
+    NSDictionary *nextParamDic = @{@"bgImg":imageArr[tag],@"title":contentTitleArr[tag]};
     ALTTSingleImgViewController  *singleImgVC = [[ALTTSingleImgViewController alloc]initWithParamDic:nextParamDic];
-    singleImgVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:singleImgVC animated:YES];
     
 }
@@ -129,11 +127,15 @@
     
     NSInteger tag = btn.tag - 12;
     NSArray *contentTitleArr = @[@"宝石星球",@"星球秘籍",@"我的宝石"];
-    NSArray *contentSizeH = @[@(kRealValue(1814)/2),@(kRealValue(1210)/2),@(kRealValue(1206)/2)];
-    NSDictionary *nextParamDic = @{@"bgImg":[NSString stringWithFormat:@"star_bj_%ld",tag],@"contentSizeH":contentSizeH[tag - 1],@"title":contentTitleArr[tag - 1]};
+    NSDictionary *nextParamDic = @{@"bgImg":[NSString stringWithFormat:@"star_bj_%ld",tag],@"title":contentTitleArr[tag - 1]};
     ALTTSingleImgViewController  *singleImgVC = [[ALTTSingleImgViewController alloc]initWithParamDic:nextParamDic];
     [self.navigationController pushViewController:singleImgVC animated:YES];
     
+}
+
+- (void)noticeAction{
+    ALTTNoticeViewController  *noticeVC = [[ALTTNoticeViewController alloc]init];
+    [self.navigationController pushViewController:noticeVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

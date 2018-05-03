@@ -27,7 +27,7 @@
     //设置导航栏背景色
     UINavigationBar *navBar = [UINavigationBar appearance];
     [navBar setBarTintColor:KZSHColor111F27];
-    
+
     
     //设置导航栏字体颜色
     NSMutableDictionary *attr = [NSMutableDictionary dictionary];

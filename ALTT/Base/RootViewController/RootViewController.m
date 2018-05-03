@@ -32,36 +32,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = KClearColor;
 
     //是否显示返回按钮
     self.isShowLiftBack = YES;
     self.StatusBarStyle = UIStatusBarStyleLightContent;
     self.tableViewModel = [[ZSHBaseTableViewModel alloc] init];
-    UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"home_bg"]];
-    image.frame = self.view.bounds;
-    [self.view insertSubview:image atIndex:0];
-}
-
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [((RootNavigationController *)self.navigationController) setupTransparentStyle];
-}
-
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+    //设置Navibar为透明，不显示背景色
+//    [((RootNavigationController *)self.navigationController) setupTransparentStyle];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [[UIApplication sharedApplication].keyWindow endEditing:YES];
-    [((RootNavigationController *)self.navigationController) setupMainStype];
+//    [((RootNavigationController *)self.navigationController) setupMainStype];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
@@ -111,12 +99,13 @@
 
 -(void)showNoDataImage
 {
+    kWeakSelf(self);
     _noDataView=[[UIImageView alloc] init];
     [_noDataView setImage:[UIImage imageNamed:@"generl_nodata"]];
     [self.view.subviews enumerateObjectsUsingBlock:^(UITableView* obj, NSUInteger idx, BOOL *stop) {
         if ([obj isKindOfClass:[UITableView class]]) {
-            [_noDataView setFrame:CGRectMake(0, 0,obj.frame.size.width, obj.frame.size.height)];
-            [obj addSubview:_noDataView];
+            [weakself.noDataView setFrame:CGRectMake(0, 0,obj.frame.size.width, obj.frame.size.height)];
+            [obj addSubview:weakself.noDataView];
         }
     }];
 }
@@ -336,7 +325,7 @@
         [btn setTitle:title forState:UIControlStateNormal];
         [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
         btn.titleLabel.font = kPingFangLight(12);
-        [btn setTitleColor:KZSHColor414A4F forState:UIControlStateNormal];
+        [btn setTitleColor:KWhiteColor forState:UIControlStateNormal];
         btn.tag = [tags[i++] integerValue];
 #ifdef __IPHONE_11_0
         if (@available(ios 11.0,*)) {

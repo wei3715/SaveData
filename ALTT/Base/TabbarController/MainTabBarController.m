@@ -45,7 +45,6 @@
 #pragma mark ————— 初始化TabBar —————
 -(void)setUpTabBar{
     [self.tabBar addSubview:({
-        self.tabBar.barTintColor = KZSHColor111F27;
         TabBar *tabBar = [[TabBar alloc] init];
         tabBar.toTabBarType = FromMainTabVCToTabBar;
         tabBar.backgroundColor = KZSHColor111F27;
@@ -88,7 +87,7 @@
 
     //包装导航控制器
     RootNavigationController *nav = [[RootNavigationController alloc]initWithRootViewController:controller];
-    controller.title = title;
+//    controller.title = title;
     [_VCS addObject:nav];
 }
 
