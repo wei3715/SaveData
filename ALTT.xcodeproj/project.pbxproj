@@ -77,6 +77,7 @@
 		0451FAE7209AAD7300A78B4D /* LXScrollContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0451FAE3209AAD7300A78B4D /* LXScrollContentView.m */; };
 		0451FAEA209AF2B600A78B4D /* ALTTNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0451FAE9209AF2B600A78B4D /* ALTTNoticeViewController.m */; };
 		0451FAED209AF40A00A78B4D /* ALTTNoticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0451FAEC209AF40A00A78B4D /* ALTTNoticeCell.m */; };
+		047CB160209C00EB00F578BD /* ALTTSingleImgViewController+method.m in Sources */ = {isa = PBXBuildFile; fileRef = 047CB15F209C00EB00F578BD /* ALTTSingleImgViewController+method.m */; };
 		04BBDD1720932CA6004E7DCE /* ALTTSingleImgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BBDD1620932CA6004E7DCE /* ALTTSingleImgViewController.m */; };
 		04BBDD23209469D7004E7DCE /* ZSHGoodMineReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BBDD1F209469D6004E7DCE /* ZSHGoodMineReusableView.m */; };
 		04BBDD24209469D7004E7DCE /* ZSHGoodsMineGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BBDD22209469D7004E7DCE /* ZSHGoodsMineGridCell.m */; };
@@ -262,6 +263,8 @@
 		0451FAE9209AF2B600A78B4D /* ALTTNoticeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTTNoticeViewController.m; sourceTree = "<group>"; };
 		0451FAEB209AF40A00A78B4D /* ALTTNoticeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALTTNoticeCell.h; sourceTree = "<group>"; };
 		0451FAEC209AF40A00A78B4D /* ALTTNoticeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTTNoticeCell.m; sourceTree = "<group>"; };
+		047CB15E209C00EB00F578BD /* ALTTSingleImgViewController+method.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ALTTSingleImgViewController+method.h"; sourceTree = "<group>"; };
+		047CB15F209C00EB00F578BD /* ALTTSingleImgViewController+method.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ALTTSingleImgViewController+method.m"; sourceTree = "<group>"; };
 		04BBDD1520932CA6004E7DCE /* ALTTSingleImgViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALTTSingleImgViewController.h; sourceTree = "<group>"; };
 		04BBDD1620932CA6004E7DCE /* ALTTSingleImgViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALTTSingleImgViewController.m; sourceTree = "<group>"; };
 		04BBDD1F209469D6004E7DCE /* ZSHGoodMineReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSHGoodMineReusableView.m; sourceTree = "<group>"; };
@@ -519,6 +522,8 @@
 				042F37A6208F24E500A8DD79 /* ALTTTitleContentViewController+Method.m */,
 				04BBDD1520932CA6004E7DCE /* ALTTSingleImgViewController.h */,
 				04BBDD1620932CA6004E7DCE /* ALTTSingleImgViewController.m */,
+				047CB15E209C00EB00F578BD /* ALTTSingleImgViewController+method.h */,
+				047CB15F209C00EB00F578BD /* ALTTSingleImgViewController+method.m */,
 			);
 			path = RootViewController;
 			sourceTree = "<group>";
@@ -1225,6 +1230,7 @@
 				042F374A208ECBD000A8DD79 /* NSString+pinyin.m in Sources */,
 				042F3785208F119100A8DD79 /* ALTTClubViewController.m in Sources */,
 				042F3766208F10FF00A8DD79 /* ALTTHomeViewController.m in Sources */,
+				047CB160209C00EB00F578BD /* ALTTSingleImgViewController+method.m in Sources */,
 				042F3703208EC94100A8DD79 /* ZSHBaseTableViewSectionModel.m in Sources */,
 				042F3753208ECBD000A8DD79 /* UIViewController+AlertViewAndActionSheet.m in Sources */,
 				042F379A208F1DE200A8DD79 /* ALTTLoginViewController.m in Sources */,
@@ -1391,8 +1397,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rljk.ALTT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7b42ca77-1c7d-4771-8b4d-9d3b8ecff211";
-				PROVISIONING_PROFILE_SPECIFIER = "Ad_hoc_profile(0501)";
+				PROVISIONING_PROFILE = "ece13b4d-2c75-4a8f-aad5-17679ded0455";
+				PROVISIONING_PROFILE_SPECIFIER = "Ad_hoc_profile(0503)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Ad_hoc;
@@ -1558,8 +1564,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rljk.ALTT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4ea35728-2e2d-4b23-ab85-8aa62310547f";
-				PROVISIONING_PROFILE_SPECIFIER = "dev_profile(0501)";
+				PROVISIONING_PROFILE = "e0fc0180-b37f-4f14-b980-3fbbb8880903";
+				PROVISIONING_PROFILE_SPECIFIER = "dev_profile(0503)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1581,8 +1587,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rljk.ALTT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7b42ca77-1c7d-4771-8b4d-9d3b8ecff211";
-				PROVISIONING_PROFILE_SPECIFIER = "Ad_hoc_profile(0501)";
+				PROVISIONING_PROFILE = "ece13b4d-2c75-4a8f-aad5-17679ded0455";
+				PROVISIONING_PROFILE_SPECIFIER = "Ad_hoc_profile(0503)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -23,26 +23,36 @@
 }
 
 - (void)createUI{
-    kWeakSelf(self);
-    self.contentSizeArr = @[@(kRealValue(1744)/2.0),@(kRealValue(1774)/2.0),@(0),@(kRealValue(1974)/2.0),@(0)];
+    
     [self.view addSubview:self.contentSV];
-    [self.contentSV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(weakself.view).insets(UIEdgeInsetsMake(0, 0, KBottomTabH, 0));
-    }];
-    
     [self.contentSV addSubview:self.contentIV];
-    [self.contentIV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(weakself.contentSV);
-    }];
-    
-    
+    self.contentIV.userInteractionEnabled = YES;
     NSInteger index = [self.paramDic[@"index"]integerValue];
-    self.contentSV.contentSize = CGSizeMake(0, [self.contentSizeArr[index]floatValue]);
     self.contentIV.image = [UIImage imageNamed:[NSString stringWithFormat:@"home_index_%ld",index]];
+    [self.contentIV addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(contentIVTap:)]];
+    [self.contentIV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.contentSV);
+        make.left.right.mas_equalTo(self.view);
+        make.height.mas_equalTo(self.contentIV.image.size.height);
+    }];
+
+    [self.contentSV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.contentIV);
+    }];
+
 }
 
 
-#pragma getter
+- (void)contentIVTap:(UIGestureRecognizer *)gesture{
+    
+    NSDictionary *nextParamDic = @{@"bgImg":@"news_bj",@"title":@"资讯"};
+    ALTTSingleImgViewController *singleVC = [[ALTTSingleImgViewController alloc]initWithParamDic:nextParamDic];
+    [self.navigationController pushViewController:singleVC animated:YES];
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

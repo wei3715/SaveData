@@ -101,21 +101,10 @@ typedef NS_ENUM (NSInteger,ZSHToTextFieldCellView) {
     FromNoneToTextFieldCellView
 };
 
-typedef NS_ENUM(NSInteger,ZSHToMultiInfoVC){
-    FromLoginVCToMultiInfoVC,                       //登录 - 立即注册
-    FromUserInfoNickNameVCToMultiInfoVC,            //个人资料 - 修改昵称
-    FromAccountVCToMultiInfoVC,                     //密码 - 找回登录密码
-    FromChangePwdVCToMultiInfoVC,                   //添加银行卡1 - 添加银行卡2
-    FromUserInfoPhoneVCToMultiInfoVC,               //个人资料 - 手机号
-    FromUserInfoQQVCToMultiInfoVC,                  //个人资料 - 绑定QQ帐号
-    FromUserInfoResumeVCToMultiInfoVC,              //个人资料 - 个人简介
-    FromUserPasswordVCToMultiInfoVC,                //账号与安全 - 登录密码
-    FromSetPasswordToMultiInfoVC,                   //重置密码
-    FromCreateStoreVCToMultiInfoVC,                 //创建门店
-    FromVerifyVCToMultiInfoVC,                      //门店-提交审核
-    FromWeMediaVCToMultiInfoVC,                     //自媒体入驻
-    FromWeMediaVerifyVCToMultiInfoVC,               //自媒体-提交资质
-    FromNoneToMultiInfoVC
+typedef NS_ENUM(NSInteger,ZSHToSingleImgVC){
+    FromGemStoreVCToSingleImgVC,                       //宝石链兑换
+    FromO2OChooseVCToSingleImgVC,                      //o2o筛选
+    FromDefaultToMultiInfoVC
 };
 
 typedef NS_ENUM (NSInteger,ZSHToNotificationVC) {
@@ -138,7 +127,7 @@ typedef NS_ENUM(NSUInteger,ZSHToTitleContentVC){
     FromHomeVCToTitleContentVC,              //首页
     FromO2OVCToTitleContentVC,               //O2O
     FromO2ORecommendToTitleContentVC,        //O2O推荐
-    FromContributionListVCToTitleContentVC,  //贡献榜（日榜，周榜，月榜，总榜）
+    FromMineVCToTitleContentVC,              //我的-全部订单
     FromPeronalCenterVCToTitleContentVC,     //个人中心（黑微博，小视频， 资料）
     FromMagazineVCToTitleContentVC,          //荣耀杂志（推荐，科技，吃喝，心灵， 时尚....）
     FromBuyVCToTitleContentVC,               //尊购

@@ -8,6 +8,7 @@
 
 #import "ALTTGemViewController.h"
 #import "ALTTNoticeViewController.h"
+#import "ALTTClubViewController.h"
 @interface ALTTGemViewController ()
 
 @property (strong, nonatomic) UIButton *gemBtn;
@@ -115,11 +116,17 @@
 
 - (void)topThreeBtnAction:(UIButton *)btn{
     NSInteger tag = btn.tag - 10;
-    NSArray *contentTitleArr = @[@"猜猜",@"游戏",@"CLUB"];
-    NSArray *imageArr = @[@"猜猜",@"游戏",@"friend_bg_1"];
-    NSDictionary *nextParamDic = @{@"bgImg":imageArr[tag],@"title":contentTitleArr[tag]};
-    ALTTSingleImgViewController  *singleImgVC = [[ALTTSingleImgViewController alloc]initWithParamDic:nextParamDic];
-    [self.navigationController pushViewController:singleImgVC animated:YES];
+
+    if (tag == 2) {
+        ALTTClubViewController *clubVC = [[ALTTClubViewController alloc]init];
+        [self.navigationController pushViewController:clubVC animated:YES];
+    } else {
+        NSArray *contentTitleArr = @[@"猜猜",@"游戏"];
+        NSArray *imageArr = @[@"猜猜",@"游戏"];
+        NSDictionary *nextParamDic = @{@"bgImg":imageArr[tag],@"title":contentTitleArr[tag]};
+        ALTTSingleImgViewController  *singleImgVC = [[ALTTSingleImgViewController alloc]initWithParamDic:nextParamDic];
+        [self.navigationController pushViewController:singleImgVC animated:YES];
+    }
     
 }
 

@@ -30,6 +30,7 @@
 #import "LXSegmentTitleView.h"
 #import "ZSHGuideView.h"
 #import "ALTTSingleImgViewController.h"
+#import "ALTTTitleContentViewController.h"
 //第三方
 #import <YYKit.h>
 #import <Masonry.h>

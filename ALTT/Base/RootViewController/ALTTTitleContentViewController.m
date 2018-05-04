@@ -39,6 +39,7 @@
 }
 
 - (void)createUI{
+    self.title = self.paramDic[@"title"];
     [self.view addSubview:self.titleView];
     [self.view addSubview:self.contentView];
     
@@ -78,7 +79,7 @@
         _titleView.titleSelectedColor = KZSHColorC6F500;
         _titleView.indicatorHeight = self.paramDic[@"indicatorHeight"]?[self.paramDic[@"indicatorHeight"]floatValue]:0;
         _titleView.delegate = self;
-        _titleView.itemMinMargin = kRealValue(15.0);
+        _titleView.itemMinMargin = 0;
         _titleView.backgroundColor = KClearColor;
     }
     return _titleView;
@@ -113,15 +114,16 @@
 - (void)reloadData{
     self.titleView.segmentTitles = self.titleArr;;
     NSMutableArray *vcs = [[NSMutableArray alloc] init];
+    
     RootViewController *vc = nil;
     for (int i = 0; i<self.titleArr.count; i++) {
         Class className = NSClassFromString(self.paramDic[@"className"]);
-        vc = [[className alloc]initWithParamDic:@{@"index":@(i)}];
+        vc = [[className alloc]initWithParamDic:@{@"index":@(i),KFromClassType:@(kFromClassTypeValue)}];
         [vcs addObject:vc];
     }
     [self.contentView reloadViewWithChildVcs:vcs parentVC:self];
-    self.titleView.selectedIndex = 0;
-    self.contentView.currentIndex = 0;
+    self.titleView.selectedIndex = self.vcIndex;
+    self.contentView.currentIndex = self.vcIndex;
 }
 
 - (void)didReceiveMemoryWarning {

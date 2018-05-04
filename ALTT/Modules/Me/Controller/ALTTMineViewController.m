@@ -88,12 +88,17 @@ static NSString *headerViewIdentifier = @"hederview";
     NSDictionary *dicData = self.dataArr[indexPath.section][indexPath.row];
     cell.modelDic = dicData;
     cell.btnClickBlock = ^(UIButton *btn){
-        //        if (indexPath.section == 1 && btn.tag-1 == 2) {//地址管理
-        //            RootWebViewController *addressListVC = [RootViewController alloc]INI;
-        //        }
-        Class className = NSClassFromString(weakself.pushVCsArr[indexPath.section][btn.tag-1]);
-        RootViewController *vc = [[className alloc]initWithParamDic:weakself.paramArr[indexPath.section][btn.tag-1]];
-        [weakself.navigationController pushViewController:vc animated:YES];
+        if (btn.tag<6) {//我的订单
+            NSArray *homeTitleArr = @[@"全部",@"待付款",@"待收货",@"待评价",@"退款售后"];
+            ALTTTitleContentViewController *orderVC = [[ALTTTitleContentViewController alloc]initWithParamDic:@{@"titleArr":homeTitleArr,KFromClassType:@(FromMineVCToTitleContentVC),@"title":@"我的订单",@"className":@"ALTTSingleImgViewController"}];
+            orderVC.vcIndex = btn.tag;
+            [weakself.navigationController pushViewController:orderVC animated:YES];
+        } else {
+            NSDictionary *nextParamDic = @{@"bgImg":[NSString stringWithFormat:@"my_bj_%ld",btn.tag - 1],@"title":btn.titleLabel.text};
+            ALTTSingleImgViewController *singleVC = [[ALTTSingleImgViewController alloc]initWithParamDic:nextParamDic];
+            [weakself.navigationController pushViewController:singleVC animated:YES];
+        }
+       
     };
     return cell;
 }
@@ -106,6 +111,9 @@ static NSString *headerViewIdentifier = @"hederview";
             header.rightBtn.hidden = NO;
             header.rightBtnBlock = ^(NSInteger tag) {
                 RLog(@"点击全部订单");
+                NSArray *homeTitleArr = @[@"全部",@"待付款",@"待收货",@"待评价",@"退款售后"];
+                ALTTTitleContentViewController *orderVC = [[ALTTTitleContentViewController alloc]initWithParamDic:@{@"titleArr":homeTitleArr,KFromClassType:@(FromMineVCToTitleContentVC),@"title":@"我的订单",@"className":@"ALTTSingleImgViewController"}];
+                [self.navigationController pushViewController:orderVC animated:YES];
             };
         }
         header.userInteractionEnabled = YES;
@@ -139,13 +147,13 @@ static NSString *headerViewIdentifier = @"hederview";
                            @{@"image":@"my_icon_3",@"desc":@"待收货",@"tag":@(3)},
                            @{@"image":@"my_icon_4",@"desc":@"待评价",@"tag":@(4)},
                            @{@"image":@"my_icon_5",@"desc":@"退款售后",@"tag":@(5)}],
-                         @[@{@"image":@"my_icon_6",@"desc":@"我的钱包",@"tag":@(1)},
-                           @{@"image":@"my_icon_7",@"desc":@"我的好友",@"tag":@(2)},
-                           @{@"image":@"my_icon_8",@"desc":@"我的活动",@"tag":@(3)},
-                           @{@"image":@"my_icon_9",@"desc":@"创客中心",@"tag":@(4)},
-                           @{@"image":@"my_icon_10",@"desc":@"宝石排行",@"tag":@(5)},
-                           @{@"image":@"my_icon_11",@"desc":@"获取能量",@"tag":@(6)},
-                           @{@"image":@"my_icon_12",@"desc":@"设置",@"tag":@(7)}]
+                         @[@{@"image":@"my_icon_6",@"desc":@"我的钱包",@"tag":@(6)},
+                           @{@"image":@"my_icon_7",@"desc":@"我的好友",@"tag":@(7)},
+                           @{@"image":@"my_icon_8",@"desc":@"我的活动",@"tag":@(8)},
+                           @{@"image":@"my_icon_9",@"desc":@"创客中心",@"tag":@(9)},
+                           @{@"image":@"my_icon_10",@"desc":@"宝石排行",@"tag":@(10)},
+                           @{@"image":@"my_icon_11",@"desc":@"获取能量",@"tag":@(11)},
+                           @{@"image":@"my_icon_12",@"desc":@"设置",@"tag":@(12)}]
                          ];
         
         
@@ -165,7 +173,7 @@ static NSString *headerViewIdentifier = @"hederview";
                               @"ALTTSingleImgViewController",
                               @"ALTTSingleImgViewController"]
                             ];
-        self.paramArr = @[@[@{@"bgImg":@"star_bj_1",@"title":@"订单"},
+        self.paramArr = @[@[@{@"bgImg":@"star_bj_1",@"index":@(2)},
                             @{@"bgImg":@"star_bj_1",@"title":@"订单"},
                             @{@"bgImg":@"star_bj_1",@"title":@"订单"},
                             @{@"bgImg":@"star_bj_1",@"title":@"订单"},

@@ -30,11 +30,14 @@
 
     [self.view addSubview:self.contentSV];
     [self.contentSV addSubview:self.contentIV];
+    self.contentIV.userInteractionEnabled = YES;
+     [self.contentIV addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(contentIVTap:)]];
 
     NSInteger index = [self.paramDic[@"index"]integerValue];
     self.contentSV.contentSize = CGSizeMake(0, [self.contentSizeArr[index]floatValue]);
     if (index == 0) {//推荐
         [self.contentSV addSubview:self.guideView];
+        [self.guideView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(contentIVTap:)]];
         [self.guideView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(self.contentSV);
             make.left.right.mas_equalTo(self.view);
@@ -42,6 +45,7 @@
         }];
         [self.guideView updateViewWithParamDic:@{@"dataArr":@[@"o2o_banner"]}];
         [self.contentSV addSubview:self.recommendView];
+        [self.recommendView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(contentIVTap:)]];
         
         [self.recommendView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(self.guideView.mas_bottom);
@@ -92,6 +96,14 @@
         _recommendView = bottomVC.view;
     }
     return _recommendView;
+}
+
+- (void)contentIVTap:(UIGestureRecognizer *)gesture{
+    
+    NSDictionary *nextParamDic = @{@"bgImg":@"news_bj",@"title":@"资讯"};
+    ALTTSingleImgViewController *singleVC = [[ALTTSingleImgViewController alloc]initWithParamDic:nextParamDic];
+    [self.navigationController pushViewController:singleVC animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {
