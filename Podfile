@@ -1,15 +1,8 @@
+platform :ios, '7.0'
 
-platform :ios, '8.0'
+target 'SaveData' do 
 
-target 'ALTT' do
+pod 'Masonry', '~> 1.1.0'
+pod 'AFNetworking', '~> 3.2.1'
 
-pod 'AFNetworking',  '~> 3.0' 
-pod 'Masonry'
-pod 'SDWebImage',    '~>3.8'
-pod 'MBProgressHUD', '~> 1.0.0'
-pod 'YYKit'
-pod 'MJExtension'
-pod 'IQKeyboardManager'
-pod 'MJRefresh'
-
-end
+end 
