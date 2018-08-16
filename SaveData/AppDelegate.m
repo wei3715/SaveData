@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AppDelegate+method.h"
 #import "ZWWTableViewController.h"
 
 @interface AppDelegate ()
@@ -23,6 +24,8 @@
     ZWWTableViewController *tabVC = [[ZWWTableViewController alloc]init];
     UINavigationController *tabNavi = [[UINavigationController alloc]initWithRootViewController:tabVC];
     self.window.rootViewController = tabNavi;
+    [self saveAppInfo];
+   
     return YES;
 }
 

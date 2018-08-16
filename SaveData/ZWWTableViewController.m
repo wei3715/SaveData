@@ -24,8 +24,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _sectionTitleArr = @[@"SQLite",@"FMDB",@"CoreData"];
-    _titleArr = @[@[@"01.SQLite:创建表&增删改查"],
+    _sectionTitleArr = @[@"NSUserDefault",@"SQLite",@"FMDB",@"CoreData"];
+    _titleArr = @[@[@"01.NSUserDefault:存储自定义对象"],
+                  @[@"01.SQLite:创建表&增删改查"],
                   @[@"01.FMDB：创建表&增删改查",@"02.FMDB：线程安全&事务"],
                   @[@"01.CoreData:手动创建CoreData"]
                   ];
@@ -77,7 +78,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     switch (indexPath.section) {
-        case 0:{//SQLite
+        case 0:{//NSUserDefaults
+            switch (indexPath.row) {
+                case 0:{
+                    [self archiverAction];
+                    break;
+                }
+                    
+                default:
+                    break;
+            }
+            
+            break;
+            
+        }
+        case 1:{//SQLite
             switch (indexPath.row) {
                 case 0:{
                     ZWWSQLiteMoreViewController *sqlLiteMoreVC = [[ZWWSQLiteMoreViewController alloc]init];
@@ -92,7 +107,7 @@
             break;
             
         }
-        case 1:{//FMDB
+        case 2:{//FMDB
             switch (indexPath.row) {
                 case 0:{
                     ZWWSQLiteMoreViewController *sqlLiteMoreVC = [[ZWWSQLiteMoreViewController alloc]init];
@@ -107,7 +122,7 @@
             break;
             
         }
-        case 2:{//CoreData
+        case 3:{//CoreData
             switch (indexPath.row) {
                 case 0:{
                     ZWWSQLiteMoreViewController *sqlLiteMoreVC = [[ZWWSQLiteMoreViewController alloc]init];

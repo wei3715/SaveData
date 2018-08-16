@@ -28,6 +28,8 @@
 		048B4DC020DA073400289F6D /* NSString+CachePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 048B4DBF20DA073400289F6D /* NSString+CachePath.m */; };
 		048B4DC720DA3ACA00289F6D /* ZWWSQLiteMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048B4DC520DA3ACA00289F6D /* ZWWSQLiteMoreViewController.m */; };
 		048B4DC820DA3ACA00289F6D /* ZWWSQLiteMoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048B4DC620DA3ACA00289F6D /* ZWWSQLiteMoreViewController.xib */; };
+		04B62117211BE75600D21CAD /* KeychainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B62116211BE75600D21CAD /* KeychainManager.m */; };
+		04B6211A211BE85A00D21CAD /* AppDelegate+method.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B62119211BE85A00D21CAD /* AppDelegate+method.m */; };
 		04C28F052103137300E5B56D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04C28F032103137300E5B56D /* Model.xcdatamodeld */; };
 		FE420902C0973A109AAFDDCD /* libPods-SaveData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E13D70B194E7322B80EFD7 /* libPods-SaveData.a */; };
 /* End PBXBuildFile section */
@@ -94,6 +96,11 @@
 		048B4DC420DA3ACA00289F6D /* ZWWSQLiteMoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWWSQLiteMoreViewController.h; sourceTree = "<group>"; };
 		048B4DC520DA3ACA00289F6D /* ZWWSQLiteMoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWWSQLiteMoreViewController.m; sourceTree = "<group>"; };
 		048B4DC620DA3ACA00289F6D /* ZWWSQLiteMoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWWSQLiteMoreViewController.xib; sourceTree = "<group>"; };
+		04B62114211BE65C00D21CAD /* SaveData.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SaveData.entitlements; sourceTree = "<group>"; };
+		04B62115211BE75600D21CAD /* KeychainManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeychainManager.h; sourceTree = "<group>"; };
+		04B62116211BE75600D21CAD /* KeychainManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeychainManager.m; sourceTree = "<group>"; };
+		04B62118211BE85A00D21CAD /* AppDelegate+method.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+method.h"; sourceTree = "<group>"; };
+		04B62119211BE85A00D21CAD /* AppDelegate+method.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+method.m"; sourceTree = "<group>"; };
 		04C28F042103137300E5B56D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		78E13D70B194E7322B80EFD7 /* libPods-SaveData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SaveData.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEBEE1BD4172AFF118A08A0B /* Pods-SaveData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveData.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveData/Pods-SaveData.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,11 +178,14 @@
 		048B4D8120DA034600289F6D /* SaveData */ = {
 			isa = PBXGroup;
 			children = (
+				04B62114211BE65C00D21CAD /* SaveData.entitlements */,
 				0425D2A520DDF6DB00F7317F /* fmdb */,
 				048B4DB520DA054C00289F6D /* PrefixHeader.pch */,
 				048B4DB420DA054C00289F6D /* UtilsMacros.h */,
 				048B4D8220DA034600289F6D /* AppDelegate.h */,
 				048B4D8320DA034600289F6D /* AppDelegate.m */,
+				04B62118211BE85A00D21CAD /* AppDelegate+method.h */,
+				04B62119211BE85A00D21CAD /* AppDelegate+method.m */,
 				048B4DB920DA059900289F6D /* ZWWTableViewController.h */,
 				048B4DB720DA059900289F6D /* ZWWTableViewController.m */,
 				048B4DB820DA059900289F6D /* ZWWTableViewController+method.h */,
@@ -183,13 +193,15 @@
 				048B4DC420DA3ACA00289F6D /* ZWWSQLiteMoreViewController.h */,
 				048B4DC520DA3ACA00289F6D /* ZWWSQLiteMoreViewController.m */,
 				048B4DC620DA3ACA00289F6D /* ZWWSQLiteMoreViewController.xib */,
-				04677D0D20DDDD19007AE64F /* Student.h */,
 				04C28F032103137300E5B56D /* Model.xcdatamodeld */,
+				04677D0D20DDDD19007AE64F /* Student.h */,
 				04677D0E20DDDD19007AE64F /* Student.m */,
 				04677D1020DDDD75007AE64F /* ZWWStudentDB.h */,
 				04677D1120DDDD75007AE64F /* ZWWStudentDB.m */,
 				048B4DBE20DA073400289F6D /* NSString+CachePath.h */,
 				048B4DBF20DA073400289F6D /* NSString+CachePath.m */,
+				04B62115211BE75600D21CAD /* KeychainManager.h */,
+				04B62116211BE75600D21CAD /* KeychainManager.m */,
 				048B4D8B20DA034800289F6D /* Assets.xcassets */,
 				048B4D8D20DA034800289F6D /* LaunchScreen.storyboard */,
 				048B4D9020DA034800289F6D /* Info.plist */,
@@ -303,6 +315,11 @@
 				TargetAttributes = {
 					048B4D7E20DA034600289F6D = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					048B4D9620DA034800289F6D = {
 						CreatedOnToolsVersion = 9.3;
@@ -395,6 +412,7 @@
 				0425D2B220DDF6DB00F7317F /* FMDatabase.m in Sources */,
 				048B4DBB20DA059900289F6D /* ZWWTableViewController.m in Sources */,
 				0425D2B520DDF6DB00F7317F /* FMDatabaseQueue.m in Sources */,
+				04B6211A211BE85A00D21CAD /* AppDelegate+method.m in Sources */,
 				0425D2B620DDF6DB00F7317F /* FMResultSet.m in Sources */,
 				0425D2B420DDF6DB00F7317F /* FMDatabasePool.m in Sources */,
 				04677D0F20DDDD19007AE64F /* Student.m in Sources */,
@@ -402,6 +420,7 @@
 				04677D1220DDDD75007AE64F /* ZWWStudentDB.m in Sources */,
 				048B4D8420DA034600289F6D /* AppDelegate.m in Sources */,
 				0425D2B320DDF6DB00F7317F /* FMDatabaseAdditions.m in Sources */,
+				04B62117211BE75600D21CAD /* KeychainManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,7 +582,9 @@
 			baseConfigurationReference = 0199E71515E6E8DDCF90EBF3 /* Pods-SaveData.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SaveData/SaveData.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 84479DR68T;
 				GCC_PREFIX_HEADER = $SRCROOT/SaveData/PrefixHeader.pch;
 				INFOPLIST_FILE = SaveData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -581,7 +602,9 @@
 			baseConfigurationReference = AEBEE1BD4172AFF118A08A0B /* Pods-SaveData.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SaveData/SaveData.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 84479DR68T;
 				GCC_PREFIX_HEADER = $SRCROOT/SaveData/PrefixHeader.pch;
 				INFOPLIST_FILE = SaveData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

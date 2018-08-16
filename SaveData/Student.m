@@ -7,10 +7,22 @@
 //
 
 #import "Student.h"
-
+#import <objc/runtime.h>
 @implementation Student
 
 - (NSString *)description{
     return [NSString stringWithFormat:@"name==%@,age==%zd",_name,_age];
+}
+
+//归档
+- (void)encodeWithCoder:(NSCoder *)coder
+{
+    encodeClass(Student);
+}
+
+//解档
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    decoderClass(Student);
 }
 @end

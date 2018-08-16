@@ -26,4 +26,33 @@
 
 //14. 歌手简介，tinguid为歌手id
 #define KTestRequestBaseUrl @"http://tingapi.ting.baidu.com/v1/restserver/ting"
+
+//归档宏
+#define encodeClass(ClassName)\
+unsigned int count = 0; \
+Ivar *ivarList = class_copyIvarList([ClassName class], &count);\
+for (int i = 0; i<count; i++) {\
+    const char *ivarName = ivar_getName(ivarList[i]);\
+    NSString *strIvarName = [NSString stringWithUTF8String:ivarName];\
+    id value = [self valueForKey:strIvarName];  \
+    [coder encodeObject:value forKey:strIvarName];\
+}\
+free(ivarList);
+
+//解档宏
+#define decoderClass(ClassName)\
+if (self = [super init]) {\
+    unsigned int count = 0;\
+    Ivar *ivarList = class_copyIvarList([ClassName class], &count);\
+    for (int i = 0 ; i<count; i++) {\
+        Ivar ivar = ivarList[i];\
+        const char *ivarName = ivar_getName(ivar);\
+        NSString *strIvarName = [NSString stringWithUTF8String:ivarName];\
+        id value = [coder decodeObjectForKey:strIvarName];\
+        [self setValue:value forKey:strIvarName];\
+    }\
+    free(ivarList);\
+}\
+return self;
+
 #endif /* UtilsMacros_h */

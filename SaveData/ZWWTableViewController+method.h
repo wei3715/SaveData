@@ -10,4 +10,7 @@
 
 @interface ZWWTableViewController (method)
 
+//NSUserDefaults 存储自定义对象
+- (void)archiverAction;
+
 @end
