@@ -10,6 +10,5 @@
 
 @interface AppDelegate (method)
 
-//使用钥匙串keychain实现，卸载App后仍可记录App信息
-- (void)saveAppInfo;
+
 @end

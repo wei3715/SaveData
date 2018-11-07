@@ -31,6 +31,7 @@
 		04B62117211BE75600D21CAD /* KeychainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B62116211BE75600D21CAD /* KeychainManager.m */; };
 		04B6211A211BE85A00D21CAD /* AppDelegate+method.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B62119211BE85A00D21CAD /* AppDelegate+method.m */; };
 		04C28F052103137300E5B56D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04C28F032103137300E5B56D /* Model.xcdatamodeld */; };
+		E0490396219286360081969E /* ZWWKeyChainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E0490395219286360081969E /* ZWWKeyChainManager.m */; };
 		FE420902C0973A109AAFDDCD /* libPods-SaveData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E13D70B194E7322B80EFD7 /* libPods-SaveData.a */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,8 @@
 		04C28F042103137300E5B56D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		78E13D70B194E7322B80EFD7 /* libPods-SaveData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SaveData.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEBEE1BD4172AFF118A08A0B /* Pods-SaveData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveData.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveData/Pods-SaveData.release.xcconfig"; sourceTree = "<group>"; };
+		E0490394219286360081969E /* ZWWKeyChainManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWWKeyChainManager.h; sourceTree = "<group>"; };
+		E0490395219286360081969E /* ZWWKeyChainManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWWKeyChainManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				04B62114211BE65C00D21CAD /* SaveData.entitlements */,
+				E049039021927FBB0081969E /* KeyChain */,
 				0425D2A520DDF6DB00F7317F /* fmdb */,
 				048B4DB520DA054C00289F6D /* PrefixHeader.pch */,
 				048B4DB420DA054C00289F6D /* UtilsMacros.h */,
@@ -200,8 +204,6 @@
 				04677D1120DDDD75007AE64F /* ZWWStudentDB.m */,
 				048B4DBE20DA073400289F6D /* NSString+CachePath.h */,
 				048B4DBF20DA073400289F6D /* NSString+CachePath.m */,
-				04B62115211BE75600D21CAD /* KeychainManager.h */,
-				04B62116211BE75600D21CAD /* KeychainManager.m */,
 				048B4D8B20DA034800289F6D /* Assets.xcassets */,
 				048B4D8D20DA034800289F6D /* LaunchScreen.storyboard */,
 				048B4D9020DA034800289F6D /* Info.plist */,
@@ -245,6 +247,17 @@
 				78E13D70B194E7322B80EFD7 /* libPods-SaveData.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E049039021927FBB0081969E /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				04B62115211BE75600D21CAD /* KeychainManager.h */,
+				04B62116211BE75600D21CAD /* KeychainManager.m */,
+				E0490394219286360081969E /* ZWWKeyChainManager.h */,
+				E0490395219286360081969E /* ZWWKeyChainManager.m */,
+			);
+			path = KeyChain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,6 +433,7 @@
 				04677D1220DDDD75007AE64F /* ZWWStudentDB.m in Sources */,
 				048B4D8420DA034600289F6D /* AppDelegate.m in Sources */,
 				0425D2B320DDF6DB00F7317F /* FMDatabaseAdditions.m in Sources */,
+				E0490396219286360081969E /* ZWWKeyChainManager.m in Sources */,
 				04B62117211BE75600D21CAD /* KeychainManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

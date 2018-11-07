@@ -14,21 +14,19 @@
 @property (nonatomic, strong) NSArray   *sectionTitleArr;
 @property (nonatomic, strong) NSArray   *titleArr;
 
-
 @end
-
-
 
 @implementation ZWWTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _sectionTitleArr = @[@"NSUserDefault",@"SQLite",@"FMDB",@"CoreData"];
+    _sectionTitleArr = @[@"NSUserDefault",@"SQLite",@"FMDB",@"CoreData",@"钥匙串永久存储数据"];
     _titleArr = @[@[@"01.NSUserDefault:存储自定义对象"],
                   @[@"01.SQLite:创建表&增删改查"],
                   @[@"01.FMDB：创建表&增删改查",@"02.FMDB：线程安全&事务"],
-                  @[@"01.CoreData:手动创建CoreData"]
+                  @[@"01.CoreData:手动创建CoreData"],
+                  @[@"01.钥匙串永久存储数据"]
                   ];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"baseCell"];
     
@@ -127,6 +125,24 @@
                 case 0:{
                     ZWWSQLiteMoreViewController *sqlLiteMoreVC = [[ZWWSQLiteMoreViewController alloc]init];
                     [self.navigationController pushViewController:sqlLiteMoreVC animated:YES];
+                    break;
+                }
+                    
+                default:
+                    break;
+            }
+            
+            break;
+            
+        }
+        case 4:{//钥匙串永久存储数据
+            switch (indexPath.row) {
+                case 0:{
+                    //单类实例化调用
+//                    [self testKechainSaveDate];
+                    
+                    //类方法调用
+                    [self testZWWKechainManagerSaveDate];
                     break;
                 }
                     

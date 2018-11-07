@@ -26,7 +26,8 @@
 
 //14. 歌手简介，tinguid为歌手id
 #define KTestRequestBaseUrl @"http://tingapi.ting.baidu.com/v1/restserver/ting"
-
+#define  KeychainKey           @"KeychainSave"
+#define  ZWWKeyChainKey        @"ZWWKeyChainSave"
 //归档宏
 #define encodeClass(ClassName)\
 unsigned int count = 0; \
